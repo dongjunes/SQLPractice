@@ -1,7 +1,7 @@
 --문제1
 select count(salary) from employees where salary<(select avg(salary) from employees);
 
---문제2
+--문제2.
 select a.first_name,b.max_salary from employees a,
 (select department_id, max(salary) as max_salary from employees group by department_id)b
 where a.department_id = b.department_id and a.salary=b.max_salary;
